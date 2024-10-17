@@ -1,11 +1,11 @@
-/* Basic Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    text-align: center;
     color: #333;
+    text-align: center;
 }
 
 /* Header Styles */
@@ -21,19 +21,18 @@ h1 {
 }
 
 p {
-    margin: 0;
     font-size: 1.2em;
 }
 
-/* Projects Grid Styles */
+/* Projects Grid Styling */
 .projects-container {
-    margin: 40px auto;
     width: 80%;
+    margin: 40px auto;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
     background-color: white;
@@ -41,11 +40,11 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Project Link Styles */
+/* Project Links Styling */
 .project-grid a {
     display: block;
+    padding: 15px;
     background-color: #f4f4f4;
-    padding: 20px;
     border-radius: 5px;
     text-decoration: none;
     color: #333;
@@ -60,3 +59,15 @@ p {
     transform: translateY(-5px);
 }
 
+/* Responsive Grid for Smaller Screens */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
